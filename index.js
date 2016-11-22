@@ -5,13 +5,11 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 global.qasymphony = {
   environment: {
     'req1': 'mot',
-    'req2': 'hai',
-    'req3': 'ba'
+    'req2': 'hai'
   },
   globals: {
     'req1': 'mot',
-    'req2': 'hai',
-    'req3': 'ba'
+    'req2': 'hai'
   }
 };
 
@@ -26,6 +24,7 @@ newman.run({
   console.log('collection run complete!');
 }).on('beforeTest', function() {
   if (!stopped) {
+    // global.qasymphony.globals.req3 = 'ba';
     global.qasymphony.nextRequest = 'ba';
     stopped = true;
   }
