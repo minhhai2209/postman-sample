@@ -5,6 +5,6 @@
   "main": "index.js",
   "author": "",
   "dependencies": {
-    "newman": "git://github.com/minhhai2209/newman.git#54bf4fe"
+    "newman": "git://github.com/minhhai2209/newman.git#bf7fdbd"
   }
 }
