@@ -1,0 +1,66 @@
+{
+  "info": {
+    "name": "Sample Postman Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "description": "A sample collection to demonstrate collections as a set of related requests"
+  },
+  "item": [
+    {
+      "name": "mot",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "tests['response code is 200'] = (postman.getGlobalVariable('req1') === data.args.source);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://echo.getpostman.com/get?source=mot",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "hai",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "tests['response code is 200'] = (postman.getGlobalVariable('req2') === data.args.source);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://echo.getpostman.com/get?source=hai",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "ba",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "tests['response code is 200'] = (postman.getGlobalVariable('req3') === data.args.source);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://echo.getpostman.com/get?source=ba",
+        "method": "GET"
+      }
+    }
+  ]
+}
